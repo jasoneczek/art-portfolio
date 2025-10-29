@@ -1,0 +1,411 @@
+/* cormorant-garamond-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/cormorant-garamond-v21-latin-regular.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* inter-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/inter-v20-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/inter-v20-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/*************************************************************/
+
+:root {
+  /* TYPOGRAPHY */
+  --ff-serif: "Cormorant Garamond", serif;
+  --ff-sans-serif: "Inter", sans-serif;
+  --fw-reg: 400;
+  --fw-bold: 700;
+
+  --fs-xsm: 0.9rem;
+  --fs-sm: 1rem;
+  --fs-md: 1.25rem;
+  --fs-lg: 1.75rem;
+  --fs-xlg: 2.5rem;
+}
+
+/*************************************************************/
+
+/* ANDY BELL'S MODERN CSS RESET */
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/**************************************************/
+
+/* ===== GLOBAL STYLES ===== */
+body {
+  font-family: var(--ff-sans-serif);
+  color: #111;
+  background: #fff;
+  font-size: var(--fs-sm);
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-serif);
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: var(--fw-bold);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 3px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.main-nav {
+  max-width: 75rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.logo {
+  width: 6rem;
+  height: auto;
+}
+
+.main-nav a {
+  font-size: var(--fs-md);
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  color: #ccc;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  border-top: 1px solid #eee;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #555;
+  font-size: var(--fs-xsm);
+}
+
+/* ===== HERO SECTION ===== */
+.wrapper {
+  width: min(90%, 56.25rem);
+  margin-inline: auto;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-block: 4rem;
+}
+
+.hero-text-wrapper {
+  width: min(80%, 43.75rem);
+}
+
+.hero h1 {
+  font-size: var(--fs-xlg);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.hero p {
+  font-size: var(--fs-md);
+  margin-bottom: 4rem;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+}
+
+/* ===== GALLERY ===== */
+.gallery-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile: 1 column */
+.gallery-grid {
+  grid-template-columns: 1fr;
+}
+
+/* Tablet: 3 columns */
+@media (min-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktop: 4 columns */
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* === LIGHTBOX OVERLAY TO ENLARGE IMAGES === */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.05);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.lightbox:target {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.lightbox img {
+  max-width: min(90vw, 1200px);
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.lightbox__overlay {
+  position: absolute;
+  inset: 0;
+  display: block;
+  cursor: zoom-out;
+}
+
+.lightbox:target img:hover {
+  transform: scale(1.02);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+  color: #fff;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+/* === RESOURCES PAGE === */
+.resources-heading {
+  text-align: center;
+  margin-bottom: 4rem;
+  font-size: 1.75rem;
+}
+
+.resources-section {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1.25rem 1.25rem 1rem;
+  margin-block: 1rem 1.25rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.resources-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.resources-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.resources-section li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: #333;
+}
+
+.resources-section li::before {
+  content: "";
+  position: absolute;
+  top: 0.65em;
+  left: 0.35rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #bbb;
+}
+
+.resources-section a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: #d7d7d7;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.resources-section a:hover,
+.resources-section a:focus-visible {
+  color: #000;
+  text-decoration-color: #999;
+  outline: none;
+}
+
+.page-title {
+  margin-block: 2.5rem 1.25rem;
+}
+
+@media (min-width: 720px) {
+  .resources-section ul {
+    column-count: 2;
+    column-gap: 2rem;
+    display: block;
+  }
+  .resources-section li {
+    break-inside: avoid;
+    margin-bottom: 0.35rem;
+  }
+}
