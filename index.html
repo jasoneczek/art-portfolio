@@ -12,7 +12,22 @@
         <a href="/index.html">
           <img src="./assets/img/logo.png" alt="JS logo" class="logo" />
         </a>
+
+        <!-- HAMBURGER BUTTON -->
+        <button
+          class="hamburger"
+          aria-label="Open navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
         <div class="links">
+          <!-- CLOSE BUTTON -->
+          <button class="menu-close" aria-label="Close navigation">×</button>
+
           <ul>
             <li>
               <a href="/index.html" class="nav-link">Home</a>
@@ -48,11 +63,22 @@
             alt="Gouache landscape painting of dunes and lake"
           />
         </section>
+
+        <section id="featured-artwork" class="featured-artwork">
+          <h2>Featured Artwork</h2>
+          <img
+            id="featured-img"
+            src="./assets/img/vincent-price.jpg"
+            alt="Featured artwork"
+          />
+        </section>
       </div>
     </main>
 
     <footer>
       <p>&copy; 2025 Jason Schaufele</p>
     </footer>
+
+    <script src="/main.js" defer></script>
   </body>
 </html>
