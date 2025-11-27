@@ -76,31 +76,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const errorBox = document.getElementById("formErrors");
 
   form.addEventListener("submit", function (e) {
+  errorBox.textContent = "";
+  let errors = [];
+
+  if (nameField.value.trim().length < 2) {
+    errors.push("Name must be at least 2 characters.");
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(emailField.value.trim())) {
+    errors.push("A valid email is required.");
+  }
+
+  if (messageField.value.trim().length < 10) {
+    errors.push("Message must be at least 10 characters.");
+  }
+
+  if (errors.length > 0) {
     e.preventDefault();
-    errorBox.textContent = "";
-    let errors = [];
+    errorBox.innerHTML = errors.join("<br>");
+    return;
+  }
+});
 
-    // Validate name
-    if (nameField.value.trim().length < 2) {
-      errors.push("Name must be at least 2 characters.");
-    }
-
-    // Validate email
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(emailField.value.trim())) {
-      errors.push("A valid email is required.");
-    }
-
-    // Validate message
-    if (messageField.value.trim().length < 10) {
-      errors.push("Message must be at least 10 characters.");
-    }
-
-    if (errors.length > 0) {
-      errorBox.innerHTML = errors.join("<br>");
-      return;
-    }
-
-    alert("Form passed validation. (In Stage 3 this will send to PHP.)");
-  });
 });

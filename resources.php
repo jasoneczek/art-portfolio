@@ -1,3 +1,16 @@
+<?php
+// PHP Feature: Random Inspirational Quote
+$quotes = [
+  "Art enables us to find ourselves and lose ourselves at the same time.",
+  "Creativity takes courage. – Henri Matisse",
+  "Every artist was first an amateur. – Ralph Waldo Emerson",
+  "Art is not what you see, but what you make others see. – Degas",
+  "Inspiration exists, but it has to find you working. – Picasso"
+];
+
+$quote = $quotes[array_rand($quotes)];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,7 +49,7 @@
               <a href="/gallery.html" class="nav-link">Gallery</a>
             </li>
             <li>
-              <a href="/resources.html" class="nav-link">Resources</a>
+              <a href="/resources.php" class="nav-link">Resources</a>
             </li>
             <li>
               <a href="/contact.html" class="nav-link">Contact</a>
@@ -49,6 +62,9 @@
     <main>
       <div class="wrapper">
         <h1 class="resources-heading">Resources & Inspiration</h1>
+          <p class="inspiration-quote" style="font-style:italic; text-align:center; margin:1.5rem 0; opacity:0.85;">
+          <?php echo $quote; ?>
+        </p>
 
         <section class="resources-section">
           <h2>Instruction</h2>
@@ -165,6 +181,25 @@
             </li>
           </ul>
         </section>
+          
+        <?php
+// === RANDOM FEATURED ARTWORK (PHP FEATURE 3) ===
+$featured_images = [
+    "cowboy.jpg",
+    "handmaid.jpg",
+    "johnny-fade.jpg",
+    "vincent-price.jpg",
+    "barbarian.jpg",
+    "buffalo.jpg"
+];
+
+$featured = $featured_images[array_rand($featured_images)];
+?>
+<div class="resources-section">
+    <h2>Featured Artwork</h2>
+    <img src="assets/img/<?php echo $featured; ?>" alt="Random featured artwork" style="max-width:350px; border-radius:8px; margin:1rem auto;">
+</div>
+
       </div>
     </main>
 
